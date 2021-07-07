@@ -1,6 +1,5 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
-
 const app = express()
 
 app.get('/api', (req, res) => {
@@ -16,16 +15,18 @@ app.post('/api/posts', verifyToken, (req, res) => {
         } else {
             res.json({
                 message: 'post created ...',
+
                 authData,
             });
         }
     });
 });
 
+
 app.post('/api/login', (req, res) => {
     const user = {
         id: 1,
-        username: 'suyog',
+        username: 'Suyog',
         email: "suyogschavan03@gmail.com",
     };
 
